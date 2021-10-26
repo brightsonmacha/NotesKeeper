@@ -12,4 +12,5 @@
     <string name="note_title">Note title</string>
     <string name="note_text">Note text</string>
     <string name="title_activity_note_list">NoteListActivity</string>
+    <string name="todo">TODO</string>
 </resources>

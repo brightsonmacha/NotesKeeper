@@ -1,15 +1,11 @@
 package com.example.noteskeeper
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ui.AppBarConfiguration
 import com.example.noteskeeper.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -26,17 +22,12 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         val dm = DataManager()
-        val adapterCourses = ArrayAdapter<CourseInfo>(this,
+        val adapterCourses = ArrayAdapter(this,
                  android.R.layout.simple_spinner_item,
                  dm.courses.values.toList())
         adapterCourses.setDropDownViewResource(android.R.layout.simple_spinner_item)
 
         spinnerCourses.adapter = adapterCourses
-
-
-
-
-
 
     }
 

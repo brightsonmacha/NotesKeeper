@@ -1,17 +1,13 @@
 package com.example.noteskeeper
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.noteskeeper.databinding.ActivityNoteListBinding
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.content_note_list.*
 
 class NoteListActivity : AppCompatActivity() {
-
-
     private lateinit var binding: ActivityNoteListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +18,10 @@ class NoteListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        fab.setOnClickListener { view ->
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
 
-        binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
